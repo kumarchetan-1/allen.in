@@ -1,5 +1,3 @@
-
-
 /* allen.in */
 :root {
     /* Mode 1 */
@@ -59,7 +57,7 @@
     --width-1920: 120rem;
     /* string */
     --font-family-font-1: Plus Jakarta Sans;
-  }
+}
 
 
 
@@ -210,7 +208,8 @@
     font-display: swap
 }
 
-:host, html {
+:host,
+html {
     line-height: 1.5;
     -webkit-text-size-adjust: 100%;
     -moz-tab-size: 4;
@@ -228,17 +227,25 @@
     margin: 0
 }
 
-body{
+body {
     max-width: 100vw;
     margin: 0;
     line-height: inherit;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
+
+
 /* Footer */
+
+
+footer {
+    padding: 2.25rem 0;
+    background: var(--bg-primary);
+}
 
 footer ul.no-style-list {
     list-style: none;
@@ -262,7 +269,7 @@ footer .grid.main-wrap.grid-cols-2 {
     flex-wrap: wrap;
 }
 
-.footerListHeader{
+.footerListHeader {
     font-weight: 500;
 }
 
@@ -272,12 +279,7 @@ footer a {
     font-size: var(--font-size-12, 12px);
     font-style: normal;
     font-weight: var(--font-weight-500, 500);
-    line-height: var(--line-height-16, 16px); 
-}
-
-
-footer {
-    padding: 2.25rem 0;
+    line-height: var(--line-height-16, 16px);
 }
 
 /* Header Styling */
@@ -343,7 +345,7 @@ nav {
     flex-basis: 80%;
 }
 
-header a{
+header a {
     color: var(--text-default-title);
     font-weight: 500;
     line-height: 1rem;
@@ -354,35 +356,52 @@ header button.solid-btn {
     display: flex;
     align-items: center;
     gap: 5px;
+    padding: 9px 16px;
+    border-radius: 20px;
 }
 
-button{
+@media (max-width: 1024px) {
+    .flex.right-col {
+        flex-basis: 70%;
+    }
+
+    .left-col {
+        flex-basis: 30%;
+    }
+
+    nav {
+        display: none;
+    }
+}
+
+button {
     cursor: pointer;
 }
 
-.solid-btn{
-    padding: 9px 16px;
+.solid-btn {
+    padding: 14px 22px;
     color: white;
-    border-radius: 20px;
+    border-radius: 40px;
     border: none;
     background-color: var(--fill-primary-active);
 }
 
-.solid-btn:hover{
-   background-color: #0b54b1;
+.solid-btn:hover {
+    background-color: #0b54b1;
 }
 
-.outline-btn{
+.outline-btn {
     color: var(--allen-in-shark, var(--color-grey-13, #1E1E22));
-text-align: center;
-padding: 9px 16px;
-font-family: var(--font-family-Font-1, "Plus Jakarta Sans");
-font-size: var(--font-size-12, 12px);
-font-style: normal;
-border-radius: 9999px;
-border: var(--stroke-weight-2, 2px) solid var(--allen-in-science-blue, #0266DA);
-font-weight: var(--font-weight-700, 700);
-line-height: var(--line-height-18, 18px); /* 150% */
+    text-align: center;
+    padding: 9px 16px;
+    font-family: var(--font-family-Font-1, "Plus Jakarta Sans");
+    font-size: var(--font-size-12, 12px);
+    font-style: normal;
+    border-radius: 9999px;
+    border: var(--stroke-weight-2, 2px) solid var(--allen-in-science-blue, #0266DA);
+    font-weight: var(--font-weight-700, 700);
+    line-height: var(--line-height-18, 18px);
+    /* 150% */
 }
 
 .outline-btn:hover {
@@ -405,11 +424,26 @@ span.rounded.bg-orange {
     font-size: var(--font-size-12, 12px);
     font-style: normal;
     font-weight: var(--font-weight-700, 700);
-    line-height: var(--line-height-16, 16px); /* 133.333% */
+    line-height: var(--line-height-16, 16px);
+    /* 133.333% */
     letter-spacing: var(--letter-spacing-0_3, 0.3px);
 }
 
+.primary-bg{
+background-color: var(--bg-primary);
+} 
 
+.standard-section-padding{
+ padding: 2.25rem 0;
+}
+
+body .max-width-full{
+    max-width: 100%;
+}
+
+.align-center{
+    text-align: center;
+}
 
 
 /* Home Page */
@@ -482,12 +516,11 @@ button.dot {
     background-color: var(--color-grey-11);
     width: .75rem;
     height: .75rem;
-    z-index: 999;
     position: relative;
     border: none;
 }
 
-button.dot.bg-white\/50{
+button.dot.bg-white\/50 {
     background-color: #0f0f0f33;
 }
 
@@ -497,25 +530,66 @@ section#hero {
 }
 
 .slide {
-    opacity: 0; /* Hidden by default */
+    opacity: 0;
+    /* Hidden by default */
     transition: opacity 0.5s ease-in-out;
-  }
-  
-  .slide.active {
-    opacity: 1; /* Visible when active */
-  }
-  
-  .slide.inactive {
-    opacity: 0; /* Keep others hidden */
-  }
-  
-@keyframes slideshow {
-    0%, 32% { margin-left: 0; }
-    33%, 65% { margin-left: -100%; }
-    66%, 100% { margin-left: -200%; }
 }
 
-@media (max-width: 768px) {
+.slide.active {
+    opacity: 1;
+    /* Visible when active */
+}
+
+.slide.inactive {
+    opacity: 0;
+    /* Keep others hidden */
+}
+
+@keyframes slideshow {
+
+    0%,
+    32% {
+        margin-left: 0;
+    }
+
+    33%,
+    65% {
+        margin-left: -100%;
+    }
+
+    66%,
+    100% {
+        margin-left: -200%;
+    }
+}
+
+img.full-width {
+    width: 100%;
+    height: auto;
+}
+
+.mobile-only {
+    display: none;
+}
+
+.desktop-only {
+    display: block;
+}
+
+.flex {
+    display: flex;
+}
+
+.slider-transition {
+    transition: all 0.5s;
+}
+
+.full-width-img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 767px) {
     .hero {
         flex-direction: column;
     }
@@ -527,15 +601,25 @@ section#hero {
     .slider-container {
         width: 100%;
     }
+
+    .mobile-only {
+        display: block;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .course-buttons {
+        justify-content: center;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
 }
 
-.flex{
-    display: flex;
-}
 
-.slider-transition{
-    transition: all 0.5s;
-}
 
 
 /* WhyAllenOnline */
@@ -550,15 +634,77 @@ section#hero {
     padding-top: 3rem;
     background-color: var(--bg-primary);
     border-radius: 1rem;
+    position: relative;
 }
 
 h3.card-subtitle {
     font-size: 1.125rem;
     color: var(--text-default-title);
+    margin-bottom: 0.75rem;
 }
 
 p.card-description {
     font-size: .875rem;
     color: var(--color-grey-29);
     font-weight: 400;
+}
+
+.card img {
+    position: absolute;
+    top: -1.75rem;
+}
+
+
+
+.card-wrap {
+    padding: 3.5rem 0 2rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+section#why-allen-online {
+    padding: 3rem 0;
+}
+
+h2.title {
+    text-align: center;
+}
+
+.min-w-full {
+    min-width: 100%;
+    height: auto;
+}
+
+img.w-full.h-auto {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 500px) {
+    .card-wrap {
+        grid-template-columns: auto;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 501px) {
+    .card-wrap {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 30px;
+        row-gap: 50px;
+    }
+}
+
+
+/* What's trending section */
+
+.whats-trending-section .dots-container.dots {
+    margin-top: 20px;
+}
+
+.whats-trending-section h2,
+.meet-our-champions h2 {
+    margin-bottom: 1.5rem;
 }
